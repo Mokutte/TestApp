@@ -30,10 +30,18 @@ function App() {
     },
   ]);
   const [error, setError] = useState();
+  const [disabledAddButton, setDisabledSetButton] = useState(true)
+
+  useEffect(() => {
+    for(let i = 0; i < departments.length; i++){
+      if(departments[i].changes){
+        setDisabledSetButton(!disabledAddButton)}
+    }
+  },[departments])
 
   
   return (
-    <MainContext.Provider value={{ setError, setDepartments, departments }}>
+    <MainContext.Provider value={{ setError, setDepartments, departments, disabledAddButton, setDisabledSetButton }}>
       <div className="App">
         <div className="container">
           {departments.map((el) => (
@@ -48,14 +56,15 @@ function App() {
           ))}
           <button
             className="addBlock"
+            disabled={!disabledAddButton}
             onClick={() =>
               setDepartments([
                 ...departments,
                 {
                   id: moment().format('LTS'),
                   changes: true,
-                  departmentName: "new departament",
-                  directorName: "",
+                  departmentName: "Название подразделения не заданно",
+                  directorName: "Руководитель подразделения не задан",
                   employeesNum: 0,
                 },
               ])

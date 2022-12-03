@@ -8,7 +8,7 @@ export default function DepartmentCart(props) {
   const [newDepartmentName, setNewDepartmentName] = useState();
   const [newDirectorName, setNewDirectorName] = useState();
   const [newEmployeesNum, setNewEmployeesNum] = useState();
-  const { setDepartments, departments } = useContext(MainContext);
+  const { setDepartments, departments, disabledAddButton, setDisabledSetButton } = useContext(MainContext);
 
   const switchChanges = () => {
     const newDepartments = departments.map((el) =>
@@ -32,6 +32,7 @@ export default function DepartmentCart(props) {
       );
       console.log(newDepartments)
       setDepartments(newDepartments);
+      setDisabledSetButton(!disabledAddButton)
   };
 
 

@@ -130,6 +130,11 @@
   height: 216px;
 }
 
+.addBlock:disabled {
+opacity: 0.5;
+}
+
+
 .addBlock:hover {
   scale: 1.01;
 }
