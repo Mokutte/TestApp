@@ -49,6 +49,8 @@ function App() {
     },
   ]);
 
+  console.log(departments)
+
 
   return (
     <MainContext.Provider

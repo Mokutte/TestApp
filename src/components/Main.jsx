@@ -31,7 +31,6 @@ export default function Main() {
             departmentName={el.departmentName}
             directorName={el.directorName}
             employeesNum={el.employeesNum}
-            division = {[]}
           />
         ))}
         <button
@@ -41,11 +40,12 @@ export default function Main() {
             setDepartments([
               ...departments,
               {
-                id: moment().format("LTS"),
+                id: departments.length + 1,
                 changes: true,
                 departmentName: "Название подразделения не заданно",
                 directorName: "Руководитель подразделения не задан",
                 employeesNum: 0,
+                divisions: [],
               },
             ])
           }

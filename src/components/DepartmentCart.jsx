@@ -40,6 +40,7 @@ export default function DepartmentCart(props) {
               : el.departmentName,
             directorName: newDirectorName ? newDirectorName : el.directorName,
             employeesNum: newEmployeesNum ? newEmployeesNum : el.employeesNum,
+            divisions: [...el.divisions],
           }
         : el
     );

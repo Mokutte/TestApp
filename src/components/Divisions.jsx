@@ -11,9 +11,11 @@ export default function Divisions(props) {
   const { viewDivision, departments } = useContext(MainContext);
   const navigate = useNavigate()
 
-  useEffect(() => {
-    !viewDivision && navigate("/")
-  })
+  // useEffect(() => {
+  //   if(departments[viewDivision - 1].divisions){ navigate("/") }
+  // })
+
+  console.log(departments[viewDivision - 1])
 
   return (
     <div className="container">
